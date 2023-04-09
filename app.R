@@ -4,7 +4,7 @@
 
 
 # PACKAGES
-library(dbplyr)
+library(dplyr)
 library(ggplot2)
 library(plotly)
 library(sf)
@@ -330,7 +330,11 @@ ui <- fluidPage(
   ),
   
   navbarPage(
-    title = "Servicios ecosistémicos",
+    title = tags$span(
+      tags$a(href = "https://atlasverde.net/", target = "_blank", "Atlas de servicios ecosistémicos de la GAM"),
+      " - ",
+      "Servicios ecosistémicos"
+    ),
     theme = shinytheme("lumen"),
     
     # Categoría: Soporte
@@ -392,6 +396,7 @@ ui <- fluidPage(
           mainPanel(
             fluidRow(h3(strong(textOutput("header_regulating")))),
             fluidRow(withSpinner(leafletOutput("map_regulating"))),
+            fluidRow(h1(column(width = 12))),
             fluidRow(withSpinner(plotlyOutput("barplot_regulating")))
           )          
         )
@@ -434,6 +439,8 @@ ui <- fluidPage(
     )
   ),
   
+  fluidRow(h1(column(width = 12))),
+  fluidRow(h1(column(width = 12))),    
   h3(class = "texto_agradecimiento_logos_1", strong("Acerca del Atlas de Servicios Ecosistémicos de la GAM")),
   h3(class = "texto_agradecimiento_logos-2", "El Atlas de Servicios Ecosistémicos de la GAM es producto de la cooperación entre los Gobiernos de Alemania y Costa Rica en el marco del proyecto Biodiver_City – Establecimiento de Corredores Biológicos Interurbanos con el fin de promover el desarrollo urbano centrado en los beneficios de la naturaleza. El instrumento fue desarrollado por el CATIE, por encargo de la Cooperación alemana para el desarrollo GIZ, bajo una estrecha articulación con el MINAE, CENIGA, SINAC y con el apoyo técnico del Instituto de Estudios Ambientales Helmholtz, UFZ."),
   fluidRow(h1(column(width = 12))),
