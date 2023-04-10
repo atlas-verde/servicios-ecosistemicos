@@ -363,6 +363,7 @@ ui <- fluidPage(
           mainPanel(
             fluidRow(h3(strong(textOutput("header_biodiversityhabitat")))),
             fluidRow(withSpinner(leafletOutput("map_biodiversityhabitat"))),
+            fluidRow(h1(column(width = 12))),
             fluidRow(withSpinner(plotlyOutput("barplot_biodiversityhabitat")))
           )              
         )
@@ -432,6 +433,7 @@ ui <- fluidPage(
           mainPanel(
             fluidRow(h3(strong(textOutput("header_foodprovisioning")))),
             fluidRow(withSpinner(leafletOutput("map_foodprovisioning"))),
+            fluidRow(h1(column(width = 12))),
             fluidRow(withSpinner(plotlyOutput("barplot_foodprovisioning")))
           )          
         )
